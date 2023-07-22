@@ -13,11 +13,8 @@ export default async function handler(req, res) {
       data.writer = session.user.name;
       const db = (await connectDB).db('test');
       let sessionResult = await db.collection('users').findOne({email: session.user.email});
-      let sessionResult2 = await db.collection('user_cred').findOne({email: session.user.email});
       if(sessionResult) {
         data.writerId = new ObjectId(sessionResult._id);
-      } else if(sessionResult2) {
-        data.writerId = new ObjectId(sessionResult2._id);
       }
       const db1 = (await connectDB).db('GHBlog');
       let result = await db1.collection('comment').insertOne(data);

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import LinkBtn from "./Linkbtn";
 
 export default function Board(props) {
@@ -78,7 +78,7 @@ export default function Board(props) {
     )
   } else {
     return(
-      <div>'nothing else'</div>
+      <div>글 쓴 게 없는데염</div>
     )
   }
 }

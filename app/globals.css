@@ -6,6 +6,46 @@
   background-position: center;
 }
 
+.comment1 {
+  width: 350px;
+  font-size: 5em;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  top: 80px;
+  left: 400px;
+  animation: slideLR 2s;
+}
+
+.comment2 {
+  width: 350px;
+  font-size: 5em;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  top: 160px;
+  right: 400px;
+  animation: slideRL 2s;
+}
+
+@keyframes slideLR {
+  from {
+    left: -400px;
+  }
+  to {
+    left: 400px
+  }
+}
+
+@keyframes slideRL {
+  from {
+    right: -400px;
+  }
+  to {
+    right: 400px
+  }
+}
+
 .main-title {
   color: #555555;
   font-size: 50px;

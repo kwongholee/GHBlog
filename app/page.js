@@ -8,7 +8,10 @@ export default async function Home() {
   if(session) {
     return (
       <div>
-        <h1>Main Page</h1>
+        <h1 style={{textAlign: 'center'}}>!~ Welcome to GHBLOG ~!</h1>
+        <p className="comment1">My Name is KwonghoLee</p>
+        <p className="comment2">Want To Use My Blog?</p>
+        <p className="comment3">Then Scroll Down!</p>
       </div>
     )
   } else {
