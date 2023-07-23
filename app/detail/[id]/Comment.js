@@ -20,7 +20,7 @@ export default function Comment(props) {
   return(
     <div>
       <hr></hr>
-      <h3>Comment</h3>
+      <h1>Comment</h1>
       <input id="input" onChange={(e) => {setComment(e.target.value)}} />
       <button onClick={() => {
         fetch('/api/comment/new', {method: 'POST', body: JSON.stringify({parent: props.id, comment: comment})})

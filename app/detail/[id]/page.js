@@ -12,9 +12,11 @@ export default async function Detail(props) {
 
   return (
     <div>
-      <h4>Title: {result.title}</h4>
-      <h4>Content: {result.content}</h4>
-      <h4>Writer: {result.writer}</h4>
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <h1 style={{marginRight: 'auto'}}>Title: {result.title}</h1>
+        <p style={{marginRight: '2%'}}>Writer: {result.writer}</p>
+      </div>
+      <h3>Content: {result.content}</h3>
       <Like like={result.like} id={result._id}></Like>
       <Comment id={result._id}></Comment>
     </div>

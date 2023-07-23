@@ -81,7 +81,7 @@
 .p-20 {
   padding: 20px;
 }
-input {
+/* input {
   box-sizing: border-box;
   padding: 10px;
   display: block;
@@ -92,7 +92,7 @@ button {
   background: lightgray;
   border: none;
   border-radius: 5px;
-} 
+}  */
 a {
   text-decoration: none;
   color: black;

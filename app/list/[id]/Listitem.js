@@ -1,14 +1,26 @@
 'use client'
 
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Linkbtn from "./Linkbtn";
+import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 export default function Listitem(props) {
   let router = useRouter();
   let [result, setResult] = useState(props.copy);
   let [search, setSearch] = useState('');
   let [what, setWhat] = useState('글제목');
+
+  // 왜 콘솔에 안 찍힐까?
+  // const getList = () => 
+  //   axios.get('/api/post/list')
+  //   .then((r) => console.log(r))
+
+  // useEffect(() => {
+  //   getList()
+  // }, [])
 
   return (
     <div>
@@ -22,12 +34,6 @@ export default function Listitem(props) {
           fetch('/api/post/list', {method: 'POST', body: JSON.stringify({what: what, search: search})}).then((r) => r.json())
           .then((r) => {
             setResult(r);
-            // router.push({
-            //   path: `/list/${props.id}`,
-            //   query: {
-            //     what: search
-            //   }
-            // })
             document.querySelector('#search').value = '';
             setSearch('');
           })
@@ -37,25 +43,30 @@ export default function Listitem(props) {
         result.map((a,i) => {
           return(
             <div className="list-item" key={i} onClick={() => {router.push('/detail/' + a._id);}}>
-              <h4>{a.title}</h4>
+              <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <h4 style={{marginRight: 'auto'}}>{a.title}</h4>
+                <p style={{marginLeft: 'auto'}}>{a.date}</p>
+              </div>
               <p>{a.writer}</p>
-              <p>{a.date}</p>
-              <p>👍: {a.like}</p>
-              <span onClick={(e) => {
-                e.stopPropagation();
-                fetch('/api/post/delete', {method: 'DELETE', body: a._id})
-                .then((r) => {r.json()})
-                .then(() => {
-                    e.target.parentElement.style.opacity = 0;
+              <div style={{display:'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
+                <p style={{position: 'absolute', left: '1.5%'}}>👍: {a.like}</p>
+                <FontAwesomeIcon icon={faPenToSquare} style={{color: "#3b3e45",cursor: 'pointer'}} size="2x" onClick={(e) => {
+                  e.stopPropagation();
+                  router.push('/edit/' + a._id);
+                }}/>
+                <span style={{width: '1%'}}></span>
+                <FontAwesomeIcon icon={faTrashCan} style={{color: "#514d4d",cursor: 'pointer'}} size="2x" onClick={(e) => {
+                  e.stopPropagation();
+                  fetch('/api/post/delete', {method: 'DELETE', body: a._id})
+                  .then((r) => {r.json()})
+                  .then(() => {
+                    e.target.parentElement.parentElement.parentElement.style.opacity = 0;
                     setTimeout(() => {
-                        e.target.parentElement.style.display = 'none';
+                      e.target.parentElement.parentElement.parentElement.style.display = 'none';
                     }, 1000)
-                })
-              }} style={{cursor: 'pointer'}}>Delete</span>
-              <span onClick={(e) => {
-                e.stopPropagation();
-                router.push('/edit/' + a._id);
-                }} style={{cursor: 'pointer'}}>Edit</span>
+                  })
+                }}/>
+              </div>
             </div>
           )
         })

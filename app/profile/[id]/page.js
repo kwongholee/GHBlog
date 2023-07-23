@@ -21,7 +21,7 @@ export default async function Profile(props) {
       <h3>이름: {result.name}</h3>
       <h3>이메일: {result.email}</h3>
       <hr></hr>
-      <h4>발행한 글 목록</h4>
+      <h4 style={{fontSize: '2em', textAlign: 'center'}}>발행한 글 목록</h4>
       <Board list={boardResult}></Board>
     </div>
   )
