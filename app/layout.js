@@ -30,7 +30,7 @@ export default async function RootLayout({ children }) {
             <Link href="/" className="logo" style={{fontSize: '50px'}}>GHBLOG</Link> 
             <Link href="/list/1">게시판</Link> 
             <Link href="/write">글쓰기</Link>
-            <span>
+            <span style={{float: 'right', marginTop: '2%'}}>
               {session.user.name} 
               <Link href={"/profile/" + result._id}> 프로필</Link>
               <LogoutBtn></LogoutBtn></span>

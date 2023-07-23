@@ -6,44 +6,23 @@
   background-position: center;
 }
 
-.comment1 {
-  width: 350px;
-  font-size: 5em;
-  color: black;
-  font-family: sans-serif;
-  position: absolute;
-  top: 80px;
-  left: 400px;
-  animation: slideLR 2s;
+.loadingRotation {
+  margin-top: 15%;
+  margin-left: 47%;
+  animation: rotate 1s infinite linear;
 }
-
-.comment2 {
-  width: 350px;
-  font-size: 5em;
-  color: black;
-  font-family: sans-serif;
-  position: absolute;
-  top: 160px;
-  right: 400px;
-  animation: slideRL 2s;
-}
-
-@keyframes slideLR {
+@keyframes rotate {
   from {
-    left: -400px;
+    transform: rotate(0deg);
   }
   to {
-    left: 400px
+    transform: rotate(360deg);
   }
 }
 
-@keyframes slideRL {
-  from {
-    right: -400px;
-  }
-  to {
-    right: 400px
-  }
+.error {
+  margin-top: 10%;
+  margin-left: 47%;
 }
 
 .main-title {

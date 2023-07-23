@@ -1,17 +1,15 @@
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import { getServerSession } from "next-auth"
 import LoginBtn from "./LoginBtn";
+import Mainpage from "./Mainpage";
 
 export default async function Home() {
   let session = await getServerSession(authOptions);
   
   if(session) {
     return (
-      <div>
-        <h1 style={{textAlign: 'center'}}>!~ Welcome to GHBLOG ~!</h1>
-        <p className="comment1">My Name is KwonghoLee</p>
-        <p className="comment2">Want To Use My Blog?</p>
-        <p className="comment3">Then Scroll Down!</p>
+      <div style={{height: '10000px'}}>
+        <Mainpage></Mainpage>
       </div>
     )
   } else {
