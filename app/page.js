@@ -8,7 +8,7 @@ export default async function Home() {
   
   if(session) {
     return (
-      <div style={{height: '10000px'}}>
+      <div style={{height: '20000px'}}>
         <Mainpage></Mainpage>
       </div>
     )
