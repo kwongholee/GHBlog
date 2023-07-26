@@ -1,0 +1,119 @@
+.title {
+    text-align: center;
+    font-size: 5em;
+    color: rgb(255, 123, 0);
+    margin-top: 15%;
+    animation: titleChange 1.5s;
+  }
+  .titleArrow {
+    margin-left: 48%;
+    animation: titleChange 1.5s;
+  }
+  
+  @keyframes titleChange {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes titleDisappear {
+    from {
+      opacitiy: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .comment1 {
+    width: 350px;
+    font-size: 5em;
+    color: black;
+    font-family: sans-serif;
+    position: absolute;
+    top: 1400px;
+    left: 200px;
+    animation: slideLR 2s;
+  }
+  .comment1Image {
+    position: absolute;
+    top: 1300px;
+    right: 200px;
+    animation: slideRL 2s;
+  }
+  .comment2 {
+    text-align: right;
+    width: 420px;
+    font-size: 5em;
+    color: black;
+    font-family: sans-serif;
+    position: absolute;
+    top: 2700px;
+    right: 200px;
+    animation: slideRL 2s;
+  }
+  .comment2Image {
+    position: absolute;
+    top: 2650px;
+    left: 200px;
+    animation: slideLR 2s;
+  }
+  .comment3 {
+    text-align: center;
+    font-size: 6em;
+    color: black;
+    font-family: sans-serif;
+    position: absolute;
+    top: 4000px;
+    left: 33%;
+    animation: rotate 1s;
+  }
+  .comment4 {
+    text-align: center;
+    font-size: 6em;
+    color: black;
+    font-family: sans-serif;
+    position: absolute;
+    top: 5600px;
+    left: 24%;
+    animation: titleChange 1.5s;
+  }
+  .comment4Image {
+    position: absolute;
+    top: 4800px;
+    left: 27%;
+    animation: titleChange 1.5s;
+  }
+  
+  @keyframes slideLR {
+    from {
+      left: -400px;
+      color: white;
+    }
+    to {
+      left: 200px;
+      color: black;
+    }
+  }
+  @keyframes slideRL {
+    from {
+      right: -400px;
+      color: white;
+    }
+    to {
+      right: 200px;
+      color: black;
+    }
+  }
+  @keyframes rotate {
+    from {
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(360deg);
+    }
+  }

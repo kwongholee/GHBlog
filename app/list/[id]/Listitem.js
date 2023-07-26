@@ -42,7 +42,7 @@ export default function Listitem(props) {
       {
         result.map((a,i) => {
           return(
-            <div className="list-item" key={i} onClick={() => {router.push('/detail/' + a._id);}}>
+            <div className="list-item" style={{cursor: 'pointer'}} key={i} onClick={() => {router.push('/detail/' + a._id);}}>
               <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <h4 style={{marginRight: 'auto'}}>{a.title}</h4>
                 <p style={{marginLeft: 'auto'}}>{a.date}</p>

@@ -11,8 +11,6 @@ export default function Board(props) {
   let router = useRouter();
   let [list, setList] = useState(props.list);
   let [search, setSearch] = useState('');
-  console.log(props.result);
-
 
   if(list.length > 0) {
     return(

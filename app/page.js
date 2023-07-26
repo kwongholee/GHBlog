@@ -1,15 +1,29 @@
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import { getServerSession } from "next-auth"
 import LoginBtn from "./LoginBtn";
-import Mainpage from "./Mainpage";
+import List from "./List";
+import { connectDB } from "@/util/database";
 
 export default async function Home() {
   let session = await getServerSession(authOptions);
+  let db = (await connectDB).db('GHBlog');
+  let result = await db.collection('post').find().toArray();
+  result = result.map((a) => {
+    a._id = a._id.toString();
+    a.writerId = a.writerId.toString();
+    return a;
+  })
+
+  let copy = [...result];
+  copy.sort((a,b) => {
+    return b.like - a.like;
+  })
+  copy = copy.slice(0, 5);
   
   if(session) {
     return (
       <div style={{height: '20000px'}}>
-        <Mainpage></Mainpage>
+        <List copy={copy}></List>
       </div>
     )
   } else {

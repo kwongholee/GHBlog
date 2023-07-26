@@ -4,6 +4,7 @@ import Listitem from "./Listitem";
 export default async function List(props) {
   const db = (await connectDB).db('GHBlog');
   let result = await db.collection('post').find().toArray();
+  result.sort((a,b) => {return b.date.localeCompare(a.date, 'ko-kr')});
   result = result.map((a) => {
     a._id = a._id.toString();
     a.writerId = a.writerId.toString();

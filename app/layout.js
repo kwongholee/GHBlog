@@ -28,6 +28,7 @@ export default async function RootLayout({ children }) {
         <body>
           <div className="navbar">  
             <Link href="/" className="logo" style={{fontSize: '50px'}}>GHBLOG</Link> 
+            <Link href="/introduce">소개어떤데</Link> 
             <Link href="/list/1">게시판</Link> 
             <Link href="/write">글쓰기</Link>
             <span style={{float: 'right', marginTop: '2%'}}>
