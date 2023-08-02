@@ -1,0 +1,44 @@
+.container {
+  
+}
+
+.titleInput {
+  width: 60%;
+  height: 30px;
+  border: 0.5px solid peru;
+  border-radius: 10px;
+}
+
+.titleInput::placeholder {
+  color: black;
+  font-style: italic;
+  font-size: 20px;
+  text-align: center;
+}
+
+.contentInput {
+  resize: none;
+  width: 60%;
+  max-width: 60%;  
+  max-height: 500px;
+  border: 0.5px solid skyblue;
+  border-radius: 10px;
+}
+
+.contentInput::placeholder {
+  color: black;
+  font-style: italic;
+  font-size: 30px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 250px;
+}
+
+.inputBtn {
+  border: none;
+  border-radius: 10px;
+  background-color: violet;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+}
