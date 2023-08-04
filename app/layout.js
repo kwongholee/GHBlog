@@ -3,9 +3,6 @@ import './globals.css'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import LogoutBtn from './LogoutBtn'
-import {cookies} from 'next/headers'
-import DarkMode from './DarkMode'
-import LightMode from './LightMode'
 import { connectDB } from '@/util/database'
 
 export const metadata = {

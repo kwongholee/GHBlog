@@ -9,7 +9,6 @@ export default function LoginBtn() {
     return(
         <div className='button-container'>
             <button className='main-login-btn' onClick={() => {signIn()}}>Login</button>
-            <button className='main-login-btn' onClick={() => {router.push('/register')}}>Register</button>
         </div>
     )
 }
