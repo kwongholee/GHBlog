@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import LinkBtn from "./Linkbtn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import style from './profile.module.css'
@@ -86,7 +85,6 @@ export default function Board(props) {
             )
           })
         }
-        <LinkBtn list={list}></LinkBtn>
       </div>
     )
   } else {

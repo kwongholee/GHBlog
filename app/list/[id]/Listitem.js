@@ -2,10 +2,9 @@
 
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import Linkbtn from "./Linkbtn";
-import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 export default function Listitem(props) {
   let router = useRouter();
@@ -13,14 +12,13 @@ export default function Listitem(props) {
   let [search, setSearch] = useState('');
   let [what, setWhat] = useState('글제목');
 
-  // 왜 콘솔에 안 찍힐까?
-  // const getList = () => 
-  //   axios.get('/api/post/list')
-  //   .then((r) => console.log(r))
+  const getList = (pageparams = 1) => 
+    axios.get(`/api/list/normal?page=${pageparams}`)
+    .then((r) => console.log(r))
 
-  // useEffect(() => {
-  //   getList()
-  // }, [])
+  useEffect(() => {
+    getList()
+  }, [])
 
   return (
     <div>
@@ -71,7 +69,6 @@ export default function Listitem(props) {
           )
         })
       }
-      <Linkbtn result={props.result}></Linkbtn>
     </div>
   )
 }
