@@ -5,6 +5,8 @@ import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { useInfiniteQuery } from "react-query";
+import { useObserver } from "./useObserver";
 
 export default function Listitem(props) {
   let router = useRouter();
@@ -19,6 +21,22 @@ export default function Listitem(props) {
   useEffect(() => {
     getList()
   }, [])
+
+  // const {data, fetchNextPage, status} = useInfiniteQuery(
+  //   ['list'],
+  //   getList,
+  //   {
+  //     getNextPageParam: (lastPage) => {
+  //       const page = lastPage.data.page;
+  //       if(lastPage.data.totalPage == page) return false;
+  //       return page + 1;
+  //     }
+  //   }
+  // )
+
+  // const observer = new IntersectionObserver(([entry]) => entry.isIntersecting && fetchNextPage())
+
+  // useObserver({target: bottom, onIntersect});
 
   return (
     <div>
