@@ -10,7 +10,7 @@ export default function Like(props) {
 
   if(count == 0) {
     return(
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>
         <FontAwesomeIcon icon={faThumbsUp} size="3x" style={{color: "#e6e935", cursor: 'pointer', marginRight: '1%'}} fade onClick={() => {
             fetch('/api/post/likeup?id=' + props.id, {method: 'PUT', body: like})
             .then(() => {
@@ -22,7 +22,7 @@ export default function Like(props) {
     )
   } else {
     return(
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>
         <FontAwesomeIcon icon={faThumbsUp} size="3x" style={{color: "#e6e935", cursor: 'pointer', marginRight: '1%'}} onClick={() => {
             fetch('/api/post/likedown?id=' + props.id, {method: 'PUT', body: like})
             .then(() => {

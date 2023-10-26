@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import LogoutBtn from './LogoutBtn'
 import { connectDB } from '@/util/database'
+import style from './page.module.css'
 
 export const metadata = {
   title: 'GHBLOG',
@@ -25,11 +26,12 @@ export default async function RootLayout({ children }) {
         <body>
           <div className="navbar">  
             <Link href="/" className="logo" style={{fontSize: '50px'}}>GHBLOG</Link> 
-            <Link href="/introduce">소개어떤데</Link> 
-            <Link href="/list/1">게시판</Link> 
-            <Link href="/write">글쓰기</Link>
+            <Link className={style.barLinkBtn} href="/introduce">소개어떤데</Link> 
+            <Link className={style.barLinkBtn} href="/list/1">게시판</Link> 
+            <Link className={style.barLinkBtn} href="/write">글쓰기</Link>
+            <Link className={style.barLinkBtn} href="/moredevelop">앞으로 개발될 것들</Link>
             <span style={{float: 'right', marginTop: '2%'}}>
-              {session.user.name} 
+              <strong>{session.user.name}</strong> 
               <Link href={"/profile/" + result._id}> 프로필</Link>
               <LogoutBtn></LogoutBtn></span>
           </div> 

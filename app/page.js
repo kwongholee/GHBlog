@@ -23,6 +23,7 @@ export default async function Home() {
   if(session) {
     return (
       <div style={{height: '20000px'}}>
+        <h1 style={{textAlign: 'center'}}>디자인 미완성...</h1>
         <List copy={copy}></List>
       </div>
     )
