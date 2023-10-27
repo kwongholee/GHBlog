@@ -1,3 +1,10 @@
+.Logo {
+    text-shadow: 4px 4px 0px #1565C0, 8px 8px 0px #42A5F5, 12px 12px 0px #E3F2FD;
+    font-family: "Arial Black", sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+}
+
 .centeredContainer {
     display: flex;
     align-items: center;
@@ -42,32 +49,14 @@
     transform: scaleX(1);
 }
 
-/* .barProfileBtn {
-    position: relative;
-    text-decoration: none;
-    color: #fff;
-    padding: 0.15rem;
-    border-radius: 0.25rem;
-    overflow: hidden;
-    isolation: isolate;
+.barLogoutBtn {
+    cursor: pointer;
+    padding: 5px 20px;
+    color: white;
+    background-color: coral;
+    border: 1px solid white;
+    border-radius: 5px;
 }
-.barProfileBtn::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    translate: -50%;
-    width: 15.625rem;
-    height: 15.625rem;
-    background: linear-gradient(transparent 50%, #aaaaaa, transparent);
-    animation: rotate 2.5s linear infinite;
+.barLogoutBtn:hover {
+    background-color: chocolate;
 }
-@keyframes rotate {
-    from {
-        rotate: 0deg;
-    }
-    to {
-        rotate: 360deg;
-    }
-} */

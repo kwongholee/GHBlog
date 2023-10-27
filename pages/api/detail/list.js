@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       let sessionResult = await db1.collection('users').findOne({email: session.user.email});
       if(req.body == '') {
         const db = (await connectDB).db('GHBlog');
-        let result = await db.collection('post').find({_id: new ObjectId(sessionResult._id)}).toArray();
+        let result = await db.collection('post').find({writerId: new ObjectId(sessionResult._id)}).toArray();
         return res.status(200).json(result);
       } else {
         const db = (await connectDB).db('GHBlog');

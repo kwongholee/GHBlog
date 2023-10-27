@@ -25,15 +25,16 @@ export default async function RootLayout({ children }) {
       <html lang="en"> 
         <body>
           <div className="navbar">  
-            <Link href="/" className="logo" style={{fontSize: '50px'}}>GHBLOG</Link> 
+            <Link href="/" className={style.Logo} style={{fontSize: '50px', color: '#0D47A1'}}>GHBLOG</Link> 
             <Link className={style.barLinkBtn} href="/introduce">소개어떤데</Link> 
             <Link className={style.barLinkBtn} href="/list/1">게시판</Link> 
             <Link className={style.barLinkBtn} href="/write">글쓰기</Link>
             <Link className={style.barLinkBtn} href="/moredevelop">앞으로 개발될 것들</Link>
             <span style={{float: 'right', marginTop: '2%'}}>
               <strong>{session.user.name}</strong> 
-              <Link href={"/profile/" + result._id}> 프로필</Link>
-              <LogoutBtn></LogoutBtn></span>
+              <Link className={style.barLinkBtn} href={"/profile/" + result._id}> 프로필</Link>
+              <LogoutBtn></LogoutBtn>
+            </span>
           </div> 
           {children}
         </body>

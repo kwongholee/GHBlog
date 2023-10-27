@@ -41,8 +41,8 @@ export default function Board(props) {
           }}>추천 수가 적은 순대로 정렬</button>
         </div>
         <div className={style.searchcontainer}>
-          <input className={style.searchInput} id="searchInput" autoComplete="off" placeholder="제목 검색창" onChange={(e) => {setSearch(e.target.value)}} />
-          <button className={style.searchbtn} onClick={() => {
+          <input className={style.searchInput} id="searchInput" autoComplete="off" placeholder="제목 검색창" onChange={(e) => {setSearch(e.target.value)}} required />
+          <button className={style.searchBtn} onClick={() => {
             fetch('/api/detail/list', {method: 'POST', body: search})
             .then((r) => r.json())
             .then((result) => {

@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       result.title = req.body.title;
       result.content = req.body.content;
       let editResult = await db.collection('post').updateOne({_id: new ObjectId(result._id)}, {$set: result})
-      return res.redirect(302, '/list/1');
+      return res.redirect(302, '/list');
     } else {
       return res.status(500).json('너 글쓴이 아니자나 뭐임?');
     }

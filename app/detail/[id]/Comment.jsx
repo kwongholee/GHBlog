@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import style from './detail.module.css';
 
 export default function Comment(props) {
   let router = useRouter();
@@ -21,8 +22,8 @@ export default function Comment(props) {
     <div>
       <hr></hr>
       <h1>Comment</h1>
-      <input id="input" onChange={(e) => {setComment(e.target.value)}} />
-      <button onClick={() => {
+      <input className={style.commentInput} id="input" onChange={(e) => {setComment(e.target.value)}} />
+      <button className={style.commentBtn} onClick={() => {
         fetch('/api/comment/new', {method: 'POST', body: JSON.stringify({parent: props.id, comment: comment})})
         .then((r) => r.json())
         .then((result) => {
@@ -35,7 +36,7 @@ export default function Comment(props) {
         data.map((a,i) => {
           return(
           <p key={i}><Link href={"/profile/" + a.writerId}>{a.writer}</Link>: {a.comment}</p>) //db에 writerId 저장하기
-        }) : 'loading'
+        }) : '댓글 달아줘...'
       }
     </div>
   )

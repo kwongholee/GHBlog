@@ -2,7 +2,7 @@ export default function Moredevelop() {
   return(
     <div>
       <h2>앞으로 개발할 목록</h2>
-      <li>페이지 아이콘 변경하기</li>
+      <li>내가 작성한 글에만 편집,삭제 아이콘 띄우기</li>
       <li>Markdown 편집기 도입하기</li>
       <li>list 페이지랑 search 페이지 라우터 분리하기</li>
       <li>소개 페이지 완성하기</li>

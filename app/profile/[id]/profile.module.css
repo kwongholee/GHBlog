@@ -11,18 +11,33 @@
   margin-top: 1%;
 }
 .searchInput {
+  border: 1px solid black;
+  border-radius: 5px;
   flex: 0;
   padding: 5px;
 }
-.searchbtn {
-  height: 30px;
+.searchBtn {
+  cursor: pointer;
   margin-left: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: violet;
+  color: black;
+  padding: 5px 20px;
+  text-align: center;
+}
+.searchBtn:hover {
+  background-color: blueviolet;
 }
 
 .btn {
+  cursor: pointer;
   border-radius: 5px;
   border: 1px solid white;
   padding: 10px 20px;
   background-color: aquamarine;
   color: black;
+}
+.btn:hover {
+  background-color: aqua;
 }
