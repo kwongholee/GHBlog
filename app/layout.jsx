@@ -10,7 +10,7 @@ export const metadata = {
   title: 'GHBLOG',
   description: 'Blog made by kwongholee',
   icons: {
-    icon: '/mainIcon.png'
+    icon: '/favicon.ico'
   },
 }
 

@@ -18,3 +18,11 @@
   height: 30px;
   margin-left: 5px;
 }
+
+.btn {
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  background-color: aquamarine;
+  color: black;
+}

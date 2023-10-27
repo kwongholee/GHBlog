@@ -60,6 +60,7 @@
   padding: 10px;
 }
 .list-item {
+  cursor: pointer;
   background: white;
   border-radius: 10px;
   padding: 20px;

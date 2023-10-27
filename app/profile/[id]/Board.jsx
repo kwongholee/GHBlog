@@ -15,24 +15,24 @@ export default function Board(props) {
     return(
       <div>
         <div className={style.btncontainer}>
-          <button onClick={() => {
+          <button className={style.btn} onClick={() => {
             let copy = [...list];
             copy = copy.sort((a,b) => a.title.localeCompare(b.title));
             setList(copy);
           }}>제목순으로 정렬(오름차순)</button>
-          <button onClick={() => {
+          <button className={style.btn} onClick={() => {
             let copy = [...list];
             copy = copy.sort((a,b) => b.title.localeCompare(a.title));
             setList(copy);
           }}>제목순으로 정렬(내림차순)</button>
-          <button onClick={() => {
+          <button className={style.btn} onClick={() => {
             let copy = [...list];
             copy = copy.sort((a,b) => {
               return b.like - a.like;
             })
             setList(copy);
           }}>추천 수가 많은 순대로 정렬</button>
-          <button onClick={() => {
+          <button className={style.btn} onClick={() => {
             let copy = [...list];
             copy = copy.sort((a,b) => {
               return a.like - b.like;
