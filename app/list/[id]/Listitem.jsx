@@ -50,9 +50,9 @@ export default function Listitem(props) {
         <button className={style.searchBtn} onClick={() => {
           fetch('/api/post/list', {method: 'POST', body: JSON.stringify({what: what, search: search})}).then((r) => r.json())
           .then((r) => {
-            setResult(r);
             document.querySelector('#search').value = '';
             setSearch('');
+            router.push('/search?' + what + '=' + search);
           })
         }}>검색</button>
       </div>
